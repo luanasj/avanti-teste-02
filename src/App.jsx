@@ -17,7 +17,7 @@ function App() {
         <SearchBar placeholder="Digite um usuário do Github"/>
         <ProfileCard>
           {/* <RequestError message="Nenhum perfil foi encontrado com esse nome de usuário."/> */}
-          <ProfileDisplay bio={"Oi! Eu sou uma Desenvolvedora de Software. (Software Developer)."} pictureURL={"https://avatars.githubusercontent.com/u/111328829?v=4"} userName={"Luana de Jesus"}/>
+          <ProfileDisplay bio={"Oi! Eu sou uma Desenvolvedora de Software. (Software Developer)."} pictureURL={"https://avatars.githubusercontent.com/u/111328829?v=4"} userName={"Lucas Mendes"}/>
         </ProfileCard>
 
       </section>
