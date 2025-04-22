@@ -1,6 +1,6 @@
-import DottedSquare from "../components/background/DottedSquare"
-import ElipseLeft from "../components/background/ElipseLeft"
-import ElipseRight from "../components/background/ElipseRight"
+import DottedSquare from "../background/DottedSquare"
+import ElipseLeft from "../background/ElipseLeft"
+import ElipseRight from "../background/ElipseRight"
 
 
 const HomeLayout = ({children})=>{
