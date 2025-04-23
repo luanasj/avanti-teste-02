@@ -18,7 +18,7 @@ const SearchBar = ({placeholder,setResult,setIsLoading})=>{
 
         if(!searchResult.ok){
             request_result.message = "Falha na solicitação."
-            setResult(searchResult)
+            setResult(request_result)
             return setIsLoading(false)
         }
 
@@ -26,8 +26,8 @@ const SearchBar = ({placeholder,setResult,setIsLoading})=>{
             const userInfo = await githubUser(searchResult.user_login)
             if(userInfo.ok){
                 request_result.user_found = userInfo.ok
-                request_result.message = "Usuario Encontrado"
-                request_result.user = userInfo
+                request_result.message = "Usuário Encontrado"
+                request_result.user_info = userInfo
             }
             else{
                 request_result.message = "Falha na solicitação."
@@ -35,10 +35,12 @@ const SearchBar = ({placeholder,setResult,setIsLoading})=>{
         } else {
             request_result.message = "Nenhum perfil foi encontrado com esse nome de usuário."
         }
-        setResult(searchResult)
+        console.log(request_result)
+
+        setResult(request_result)
         return setIsLoading(false)
         
-        // console.log(request_result)
+        
     }
     
     const inputOnChangeHandler = (evt)=>{
@@ -48,8 +50,10 @@ const SearchBar = ({placeholder,setResult,setIsLoading})=>{
     const submitOnClickHandler = (evt)=>{
         evt.preventDefault()
         evt.stopPropagation()
-
-        servicesRequestsHandler(name)
+         
+        if(name.length){
+            servicesRequestsHandler(name)
+        }
     }
 
 
