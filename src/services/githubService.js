@@ -18,7 +18,7 @@ const githubSearch = async (name)=>{
         user_login: responseData?.items[0]?.login ?? undefined
     }
   
-    console.log(searchResult)
+    return searchResult
 }
 
 const githubUser = async (username) =>{
@@ -37,12 +37,10 @@ const githubUser = async (username) =>{
         ok: response.ok,
         profile_picture: responseData?.avatar_url,
         user_name: responseData?.name,
-        bio: responseData?.name
+        bio: responseData?.bio
     }
 
-    console.log(userInfo)
+    return userInfo
 } 
 
-githubUser("luanasj")
-// githubSearch("luana de jesus")
 
