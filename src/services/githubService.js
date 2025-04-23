@@ -32,13 +32,15 @@ const githubUser = async (username) =>{
 
     const responseData = await response.json()
 
-    console.log(responseData)
+    const userInfo = {
+        status: response.status,
+        ok: response.ok,
+        profile_picture: responseData?.avatar_url,
+        user_name: responseData?.name,
+        bio: responseData?.name
+    }
 
-    // const userInfo = {
-    //     status: response.status,
-    //     ok: response.ok,
-
-    // }
+    console.log(userInfo)
 } 
 
 githubUser("luanasj")
