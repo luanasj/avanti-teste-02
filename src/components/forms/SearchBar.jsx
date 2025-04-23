@@ -1,4 +1,18 @@
-const SearchBar = ({placeholder})=>{
+const SearchBar = ({placeholder,setResult,setIsLoading})=>{
+    const servicesRequestsHandler = ()=>{
+        
+    }
+    
+    const inputOnChangeHandler = (evt)=>{
+
+    }
+
+    const submitOnClickHandler = (evt)=>{
+        evt.preventDefault()
+        evt.stopPropagation()
+    }
+
+
     return(
         <form className="bg-white w-[503px] h-[62px] rounded-[10px] border-1 border-[#DDDDDD] flex items-center">
             <input type="text" placeholder={placeholder} className="text-[18px] font-semibold text-black placeholder:text-black w-full pl-[14px] pr-[14px] font-['Nunito_Sans'] focus:outline-0"/>
