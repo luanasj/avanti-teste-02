@@ -7,6 +7,7 @@ import SearchBar from './components/forms/SearchBar'
 import ProfileCard from './components/cards/ProfileCard'
 import RequestError from './components/messages/RequestError'
 import ProfileDisplay from './components/cards/ProfileDisplay'
+import LoadingAnimation from './components/icons/LoadingAnimation'
 
 function App() {
   const [result,setResult] = useState(null)
@@ -19,6 +20,7 @@ function App() {
         <HomePageTitle/>
         <SearchBar placeholder="Digite um usuário do Github" setResult={setResult} setIsLoading={setIsLoading}/>
 
+        {isLoading && <LoadingAnimation/>}
 
         {!isLoading && result &&
           <ProfileCard>
