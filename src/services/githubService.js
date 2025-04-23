@@ -1,7 +1,7 @@
-const githubSearch = async (userName)=>{
-    userName = userName.replaceAll(" ","+")
+const githubSearch = async (name)=>{
+    name = encodeURIComponent(name)
 
-    const url = `https://api.github.com/search/users?q=${userName}&per_page=1&page=1`
+    const url = `https://api.github.com/search/users?q=${name}&per_page=1&page=1`
 
     const response = await fetch(url,{
         headers: {
@@ -14,10 +14,16 @@ const githubSearch = async (userName)=>{
     const searchResult = {
         status: response.status,
         total_count: responseData?.total_count ?? undefined,
-        user_url: responseData?.items[0]?.url ?? undefined
+        user_login: responseData?.items[0]?.login ?? undefined
     }
   
     console.log(searchResult)
 }
+
+const githubUser = async (username) =>{
+    const url = `https://api.github.com/users/${username}`
+
+} 
+
 
 githubSearch("luana de jesus")
