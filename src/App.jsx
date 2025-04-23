@@ -16,7 +16,7 @@ function App() {
   // const [searched, setSearched] = useState(false)
 
   return (
-      <section className='z-50 max-w-[1156px] flex flex-col justify-start items-center gap-y-[30px] pt-[30px] pb-[30px] max-h-[537px] w-[90%] h-[90%] bg-black'>
+      <section className='z-50 min-w-[390px] max-w-[1156px] flex flex-col justify-start items-center gap-y-[30px] pt-[30px] pb-[30px] max-h-[537px] w-[90%] h-[90%] bg-black'>
         <HomePageTitle/>
         <SearchBar placeholder="Digite um usuário do Github" setResult={setResult} setIsLoading={setIsLoading}/>
 

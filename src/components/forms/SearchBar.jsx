@@ -55,7 +55,7 @@ const SearchBar = ({placeholder,setResult,setIsLoading})=>{
 
 
     return(
-        <form className="bg-white w-[503px] h-[62px] rounded-[10px] border-1 border-[#DDDDDD] flex items-center">
+        <form className="bg-white w-[95%] max-w-[503px] h-[62px] rounded-[10px] border-1 border-[#DDDDDD] flex items-center">
             <input type="text" placeholder={placeholder} onChange={inputOnChangeHandler} className="text-[18px] font-semibold text-black placeholder:text-black w-full pl-[14px] pr-[14px] font-['Nunito_Sans'] focus:outline-0"/>
             <button type="submit" onClick={submitOnClickHandler} className="group rounded-[10px] border-1 border-r-0 border-[#DDDDDD] size-[62px] flex items-center justify-center shrink-0 bg-[#005CFF] hover:bg-[#000000] cursor-pointer">
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
