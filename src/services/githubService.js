@@ -13,6 +13,7 @@ const githubSearch = async (name)=>{
 
     const searchResult = {
         status: response.status,
+        ok: response.ok,
         total_count: responseData?.total_count ?? undefined,
         user_login: responseData?.items[0]?.login ?? undefined
     }
@@ -23,7 +24,23 @@ const githubSearch = async (name)=>{
 const githubUser = async (username) =>{
     const url = `https://api.github.com/users/${username}`
 
+    const response = await fetch(url,{
+        headers:{
+            "X-GitHub-Api-Version": "2022-11-28"
+        }
+    })
+
+    const responseData = await response.json()
+
+    console.log(responseData)
+
+    // const userInfo = {
+    //     status: response.status,
+    //     ok: response.ok,
+
+    // }
 } 
 
+githubUser("luanasj")
+// githubSearch("luana de jesus")
 
-githubSearch("luana de jesus")
